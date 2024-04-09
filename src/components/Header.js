@@ -6,7 +6,7 @@ function Header() {
     <header>
       <div className="header wrapper">
         <div className="header-logo">
-          <Link to="/">Home</Link>
+          <Link to="/">Негізгі бет</Link>
         </div>
 
         <ul className="header-ul">

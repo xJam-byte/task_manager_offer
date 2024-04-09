@@ -7,7 +7,7 @@ function Home() {
   const { tasks, workers } = React.useContext(AppContext);
   return (
     <div className="wrapper">
-      <h2>All tasks</h2>
+      <h2>Барлық тапсырмалар</h2>
       <div className="grid">
         {tasks.map((task) => (
           <Product key={task.id} task={task} />
@@ -15,7 +15,7 @@ function Home() {
       </div>
       <br />
       <br />
-      <h2>All workers</h2>
+      <h2>Барлық жұмысшылар</h2>
       <div className="grid">
         {workers.map((worker) => (
           <ProductWorker key={worker.id} worker={worker} />

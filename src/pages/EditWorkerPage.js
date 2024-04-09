@@ -41,13 +41,20 @@ function EditWorkerPage() {
     return <div>Loading...</div>;
   }
   const onClickSend = async () => {
-    const resp = await axios.put(`https://localhost:7021/api/Workers/${id}`, {
+    const resp = await axios.put(`https://localhost:7021/api/User/${id}`, {
       id: Number(id),
       name: name,
       seconName: surname,
       email: email,
-      phone: 200,
+      phone: phone,
     });
+    console.log(resp);
+    navigate("/");
+    window.location.reload();
+  };
+
+  const onClickDelete = async () => {
+    const resp = await axios.delete(`https://localhost:7021/api/User/${id}`);
     console.log(resp);
     navigate("/");
     window.location.reload();
@@ -59,29 +66,34 @@ function EditWorkerPage() {
         <h2>Edit worker</h2>
         <input
           type="text"
-          placeholder="worker's name"
+          placeholder="жұмысшының аты"
           value={name}
           onChange={onChangeName}
         />
         <input
           type="text"
-          placeholder="worker's surname"
+          placeholder="жұмысшының тегі"
           value={surname}
           onChange={onChangeSurname}
         />
         <input
           type="text"
-          placeholder="worker's email"
+          placeholder="жұмысшының электрондық поштасы"
           value={email}
           onChange={onChangeEmail}
         />
         <input
           type="text"
-          placeholder="worker's phone"
+          placeholder="жұмысшының телефоны"
           value={phone}
           onChange={onChangePhone}
         />
-        <button onClick={onClickSend}>Send</button>
+        <button style={{ marginTop: 10 }} onClick={onClickSend}>
+          Жіберу
+        </button>
+        <button style={{ marginTop: 10 }} onClick={onClickDelete}>
+          Жұмысшыны жою
+        </button>
       </div>
     </div>
   );

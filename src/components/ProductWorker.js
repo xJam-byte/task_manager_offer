@@ -17,16 +17,20 @@ function ProductWorker({ worker }) {
       </div>
       <div className="d-flex justify-content-start px-3 align-items-center">
         <i className="mdi mdi-view-comfy task"></i>
-        <span className="quote2 pl-2">Email: {worker.email}</span>
+        <span style={{ textAlign: "left" }} className="quote2">
+          Эл. пошта: {worker.email}
+        </span>
       </div>
       <div className="d-flex justify-content-between  px-3 align-items-center pb-3">
         <div className="d-flex justify-content-start align-items-center">
           <i className="mdi mdi-calendar-clock date"></i>
-          <span className="quote2 pl-2">Phone: {worker.phone}</span>
+          <span style={{ textAlign: "left" }} className="quote2 pl-2">
+            Телефон нөмірі: {worker.phone}
+          </span>
         </div>
       </div>
       <Link style={{ marginLeft: 15 }} to={"/Workers/" + worker.id}>
-        Edit worker
+        Жұмысшыны өңдеу
       </Link>
     </div>
   );

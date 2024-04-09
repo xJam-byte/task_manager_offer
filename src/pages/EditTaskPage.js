@@ -6,11 +6,11 @@ import { useNavigate, useParams } from "react-router-dom";
 function EditTaskPage() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { tasks } = useContext(AppContext);
+  const { tasks, workers } = useContext(AppContext);
   const [taskTitle, setTaskTitle] = useState("");
   const [taskDesc, setTaskDesc] = useState("");
   const [taskDeadline, setTaskDeadline] = useState("");
-  const [taskTo, setTaskTo] = useState(0);
+  const [taskTo, setTaskTo] = useState(1);
   const [initialValuesSet, setInitialValuesSet] = useState(false);
 
   const onChangeTitle = (e) => {
@@ -32,23 +32,35 @@ function EditTaskPage() {
       setTaskTitle(current.title);
       setTaskDeadline(current.deadline);
       setTaskDesc(current.description);
-      setTaskTo(current.assignedToId);
+      const we = workers.find((t) => t.id === current.assignedToId);
+      setTaskTo(we.email);
       setInitialValuesSet(true);
     }
-  }, [tasks, id]);
+  }, [tasks, id, workers]);
 
   if (!initialValuesSet) {
     return <div>Loading...</div>;
   }
   const onClickSend = async () => {
-    const resp = await axios.put(`https://localhost:7021/api/Tasks/${id}`, {
-      id: Number(id),
-      title: taskTitle,
-      description: taskDesc,
-      deadline: taskDeadline,
-      status: 200,
-      assignedToId: 1,
-    });
+    const current = workers.find((t) => t.email === taskTo);
+    if (current) {
+      await axios.put(`https://localhost:7021/api/Tasks/${id}`, {
+        id: Number(id),
+        title: taskTitle,
+        description: taskDesc,
+        deadline: taskDeadline,
+        status: 0,
+        assignedToId: current.id,
+      });
+    }
+    navigate("/");
+    window.location.reload();
+  };
+
+  const onClickDelete = async () => {
+    const resp = await axios.delete(
+      `https://localhost:7021/api/Tasks/issues/${id}`
+    );
     console.log(resp);
     navigate("/");
     window.location.reload();
@@ -60,29 +72,34 @@ function EditTaskPage() {
         <h2>Edit task</h2>
         <input
           type="text"
-          placeholder="task title"
+          placeholder="тапсырма тақырыбы"
           value={taskTitle}
           onChange={onChangeTitle}
         />
         <input
           type="text"
-          placeholder="task description"
+          placeholder="тапсырма сипаттамасы"
           value={taskDesc}
           onChange={onChangeDesc}
         />
         <input
           type="text"
-          placeholder="task deadline"
+          placeholder="тапсырманың орындалу мерзімі"
           value={taskDeadline}
           onChange={onChangeDeadline}
         />
         <input
-          type="number"
-          placeholder="assigned to"
+          type="text"
+          placeholder="тапсырма тапсырылды"
           value={taskTo}
           onChange={onChangeTo}
         />
-        <button onClick={onClickSend}>Send</button>
+        <button style={{ marginTop: 10 }} onClick={onClickSend}>
+          Жіберу
+        </button>
+        <button style={{ marginTop: 10 }} onClick={onClickDelete}>
+          Тапсырманы жою
+        </button>
       </div>
     </div>
   );

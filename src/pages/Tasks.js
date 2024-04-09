@@ -47,32 +47,32 @@ function Tasks() {
   return (
     <div className="wrapper">
       <div className="form">
-        <h2>Add task</h2>
+        <h2>Тапсырма қосу</h2>
         <input
           type="text"
-          placeholder="task title"
+          placeholder="тапсырма тақырыбы"
           value={taskTitle}
           onChange={(e) => onChangeTitle(e)}
         />
         <input
           type="text"
-          placeholder="task description"
+          placeholder="тапсырма сипаттамасы"
           value={taskDesc}
           onChange={(e) => onChangeDesc(e)}
         />
         <input
           type="text"
-          placeholder="task deadline"
+          placeholder="тапсырманың орындалу мерзімі"
           value={taskDeadline}
           onChange={(e) => onChangeDeline(e)}
         />
         <input
           type="text"
-          placeholder="assigned to"
+          placeholder="тапсырма тапсырылды"
           value={taskTo}
           onChange={(e) => onChangeTo(e)}
         />
-        <button onClick={onClickSend}>Submit</button>
+        <button onClick={onClickSend}>Жіберу</button>
       </div>
     </div>
   );

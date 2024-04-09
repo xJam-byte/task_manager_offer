@@ -5,31 +5,30 @@ function Footer() {
     <footer>
       <div className="wrapper footer">
         <div className="lorem block-footer">
-          <div className="title">Task Manager</div>
+          <div className="title">Тапсырмалар менеджері</div>
           <br />
           <p className="description">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores
-            eligendi tempora alias vero est? Error atque id eaque doloribus
-            architecto nulla laborum quis harum quae cum, consectetur nemo, ad
-            minima?
+            Сәлеметсіз бе, бұл шынымен де ұстану қиын. Мамандар Таңдау үшін
+            басқа уақыт бар ма? Қателер мен азаптар сәулетші үшін, бұл заттардың
+            ешқайсысының еңбегінің ешқайсысы кішкентай?
           </p>
         </div>
         <div className="information block-footer">
-          <div className="title">information</div>
+          <div className="title">ақпарат</div>
           <br />
-          <p>About Us</p>
-          <p>Faq</p>
-          <p>Terms & Conditions</p>
-          <p> Contacts</p>
-          <p>Help</p>
+          <p>Біз туралы</p>
+          <p>Жиі қойылатын сұрақтар</p>
+          <p>Шарттар мен талаптар</p>
+          <p>Контактілер</p>
+          <p>Көмек</p>
         </div>
         <div className="get_in_touch block-footer">
-          <div className="title">Get In Touch</div>
+          <div className="title">Байланыста болу</div>
           <br />
-          <p>Shamshi Kaldayakova 70</p>
-          <p>Kazakhstan, Astana</p>
-          <p>abylaimuratbayev@gmail.com</p>
-          <p>+7-778-355-0947</p>
+          <p>Шәмші Қалдаяқов 70</p>
+          <p>Қазақстан, Астана</p>
+          <p>example@gmail.com</p>
+          <p>+7-777-555-0000</p>
         </div>
       </div>
     </footer>

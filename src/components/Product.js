@@ -10,17 +10,19 @@ function Product({ task }) {
       </div>
       <div className="d-flex justify-content-start px-3 align-items-center">
         <i className="mdi mdi-view-comfy task"></i>
-        <span className="quote2 pl-2">Task: Practice</span>
+        <span className="quote2">Тапсырма: Жаттығу</span>
       </div>
-      <div className="d-flex justify-content-between  px-3 align-items-center pb-3">
-        <div className="d-flex justify-content-start align-items-center">
+      <div className="d-flex justify-content-between  px-3 pb-3">
+        <div className="d-flex justify-content-start">
           <i className="mdi mdi-calendar-clock date"></i>
-          <span className="quote2 pl-2">Date: {task.deadline}</span>
+          <span style={{ textAlign: "left" }} className="quote2 pl-2">
+            Мерзімі: {task.deadline}
+          </span>
         </div>
       </div>
       {/* <Link to={"/Tasks?id=" + task.id}>View task</Link> */}
       <Link style={{ marginLeft: 15 }} to={"/Tasks/" + task.id}>
-        Edit task
+        Тапсырманы өңдеу
       </Link>
     </div>
   );

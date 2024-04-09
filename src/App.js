@@ -9,6 +9,7 @@ import Tasks from "./pages/Tasks";
 import Workers from "./pages/Workers";
 import axios from "axios";
 import EditTaskPage from "./pages/EditTaskPage";
+import EditWorkerPage from "./pages/EditWorkerPage";
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -38,6 +39,7 @@ function App() {
             <Route path="/tasks" element={<Tasks />} />
             <Route path="/workers" element={<Workers />} />
             <Route path="/Tasks/:id" element={<EditTaskPage />} />
+            <Route path="/Workers/:id" element={<EditWorkerPage />} />
           </Routes>
         </main>
         <br />

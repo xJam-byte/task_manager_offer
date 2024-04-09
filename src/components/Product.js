@@ -3,13 +3,6 @@ import { Link } from "react-router-dom";
 
 function Product({ task }) {
   return (
-    // <div classNameName="product">
-    //   {/* <h3>{task.title}</h3> */}
-    //   {/* <p>{task.description}</p> */}
-    //   <h3>Front end</h3>
-    //   <p>Finish simple fornt end template</p>
-
-    // </div>
     <div className="two">
       <div className="px-3">
         <h4 className="name">{task.title}</h4>
@@ -27,7 +20,7 @@ function Product({ task }) {
       </div>
       {/* <Link to={"/Tasks?id=" + task.id}>View task</Link> */}
       <Link style={{ marginLeft: 15 }} to={"/Tasks/" + task.id}>
-        View task
+        Edit task
       </Link>
     </div>
   );

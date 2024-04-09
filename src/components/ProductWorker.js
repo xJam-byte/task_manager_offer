@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function ProductWorker({ worker }) {
   return (
@@ -24,6 +25,9 @@ function ProductWorker({ worker }) {
           <span className="quote2 pl-2">Phone: {worker.phone}</span>
         </div>
       </div>
+      <Link style={{ marginLeft: 15 }} to={"/Workers/" + worker.id}>
+        Edit worker
+      </Link>
     </div>
   );
 }

@@ -63,7 +63,7 @@ function EditWorkerPage() {
   return (
     <div className="wrapper">
       <div className="form">
-        <h2>Edit worker</h2>
+        <h2>Жұмысшыны өңдеу</h2>
         <input
           type="text"
           placeholder="жұмысшының аты"

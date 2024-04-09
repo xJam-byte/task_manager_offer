@@ -69,7 +69,7 @@ function EditTaskPage() {
   return (
     <div className="wrapper">
       <div className="form">
-        <h2>Edit task</h2>
+        <h2>Тапсырманы өңдеу</h2>
         <input
           type="text"
           placeholder="тапсырма тақырыбы"
